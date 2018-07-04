@@ -13,7 +13,7 @@ return [
     'items' => [
         [
             'name' => 'Home',
-            'auth' => authMenuCan('homeAbility'),
+            'auth' => authMenuCan('homeAbility'), // Will be shown if user "can" 'homeAbility'.
             'link' => route('dashboard'),
             'active' => activeMenuController(\App\Http\Controllers\DashboardController::class),
             'icon' => 'home',
@@ -28,7 +28,7 @@ return [
         [
             'name' => 'Complex auth',
             'auth' => function (){
-                return \Gate::check('one') || \Gate::check('two'); 
+                return Gate::check('one') || Gate::check('two');
             },
             'link' => '/complex-auth',
             'active' => activeMenuRequestPrefix('complex-auth'),
