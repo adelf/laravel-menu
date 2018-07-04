@@ -1,4 +1,4 @@
-#Laravel Menu
+# Laravel Menu
 
 Simple component for creating menus in Laravel. Instead of using controllers or creating huge blade templates suggests only one configuration file.
 
@@ -74,7 +74,7 @@ Blade template for one-level menus can be very simple:
 
 For two-level menus it's more complicated. Example of it is provided by package.
 
-##Installation
+## Installation
 First, require package via composer:
 ```
 composer require adelf/laravel-menu
@@ -85,7 +85,7 @@ php artisan vendor:publish --provider="Adelf\LaravelMenu\LaravelMenuServiceProvi
 ```
 **resources/menu/default.php** and **resources/views/menu/menu.blade.php** files will appear.
 
-##Using
+## Using
 This will render menu's blade template
 ```blade
 <header>
@@ -100,7 +100,7 @@ Title of active item can be used for title:
 </title>
 ```
 
-##Multiple menus
+## Multiple menus
 Another menu can be created by defining it in new file on **resources/menu** directory. For example, **resources/menu/admin.php**
 
 ```blade
