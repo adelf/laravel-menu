@@ -55,7 +55,7 @@ final class LaravelMenu
     {
         $result = $this->getMenu($menuName);
 
-        return $result->getLastActiveItem();
+        return $result->getLastActiveItem() ?? [];
     }
 
     /**
