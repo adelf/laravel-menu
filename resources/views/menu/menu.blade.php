@@ -3,9 +3,10 @@
         @foreach($items as $item)
             @if(isset($item['items']))
                 <li>
-                    <a href="#" title="{{$item['name']}}"><i class="fa fa-lg fa-fw fa-{{$item['icon']}}"></i><span class="menu-item-parent">{{$item['name']}}</span></a>
+                    <a href="#" title="{{$item['name']}}"><i class="fa fa-{{$item['icon']}}"></i>{{$item['name']}}</a>
 
-                    <ul style="display: @if($item['activeParent']) block; @else none; @endif;">
+                    {{--<ul style="display: @if($item['activeParent']) block; @else none; @endif;"> <!--example of showing/hiding active/not active parent menu items-->--}}
+                    <ul>
                         @foreach($item['items'] as $subItem)
                             <li @if($subItem['active']) class="active" @endif>
                                 <a href="{{$subItem['link']}}">{{$subItem['name']}}</a>
