@@ -8,14 +8,14 @@ return [
             'name' => 'Home',
             //'auth' => authMenuCan('homeAbility'),
             'link' => '/', // or route('dashboard')
-            //'active' => activeMenuController(\App\Http\Controllers\DashboardController::class),
+            //'active' => activeMenuController(\App\Http\Controllers\DashboardController::class), // Will be active for this controller
             'icon' => 'home',
         ],
         [
             'name' => 'Foo',
             //'auth' => authMenuCan('fooAbility'),
             'link' => '/foo', // or route('foo')
-            // 'active' => activeMenuRequestPrefix('organizations'),
+            // 'active' => activeMenuRequestPrefix('foo'), // Will be active for all '/foo*' URL's
             'icon' => 'briefcase',
         ],
         [
