@@ -89,7 +89,7 @@ php artisan vendor:publish --provider="Adelf\LaravelMenu\LaravelMenuServiceProvi
 This will render menu's blade template
 ```blade
 <header>
-{!! app(\Adelf\LaravelMenu\LaravelMenu::class)->render() !!}
+    {!! app(\Adelf\LaravelMenu\LaravelMenu::class)->render() !!}
 </header>
 ```
 
@@ -108,6 +108,6 @@ Another menu can be created by defining it in new file on **resources/menu** dir
     {!! array_get(app(\Adelf\LaravelMenu\LaravelMenu::class)->getLastActiveItem('admin'), 'name', '') !!}
 </title>
 <header>
-{!! app(\Adelf\LaravelMenu\LaravelMenu::class)->render('admin') !!}
+    {!! app(\Adelf\LaravelMenu\LaravelMenu::class)->render('admin') !!}
 </header>
 ```
