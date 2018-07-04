@@ -19,7 +19,7 @@ final class FilteredMenu
      */
     private $lastActiveItem;
 
-    public function __construct(array $filteredItems, array $menuConfig, ?array $lastActiveItem)
+    public function __construct(array $filteredItems, array $menuConfig, $lastActiveItem)
     {
         $this->filteredItems = $filteredItems;
         $this->menuConfig = $menuConfig;
@@ -45,7 +45,7 @@ final class FilteredMenu
     /**
      * @return array|null
      */
-    public function getLastActiveItem(): ?array
+    public function getLastActiveItem()
     {
         return $this->lastActiveItem;
     }
