@@ -19,11 +19,11 @@ return [
             'icon' => 'home',
         ],
         [
-            'name' => 'Foo',
-            'auth' => authMenuCan('fooAbility'),
-            'link' => '/foo',
-            'active' => activeMenuUrlPrefix('foo'), // Will be active for all '/foo*' URL's
-            'icon' => 'briefcase',
+            'name' => 'Users',
+            'auth' => authMenuCan('manageUsers'),
+            'link' => '/users',
+            'active' => activeMenuUrlPrefix('users'), // Will be active for all '/users*' URL's
+            'icon' => 'user',
         ],
         [
             'name' => 'Complex auth',
