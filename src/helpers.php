@@ -7,7 +7,7 @@ function activeMenuController(string $controllerClassName): Closure
     };
 }
 
-function activeMenuRequestPrefix(string $prefix): Closure
+function activeMenuUrlPrefix(string $prefix): Closure
 {
     return function() use ($prefix) {
         return strpos(request()->path(), $prefix) === 0;

@@ -15,7 +15,7 @@ return [
             'name' => 'Foo',
             //'auth' => authMenuCan('fooAbility'),
             'link' => '/foo', // or route('foo')
-            // 'active' => activeMenuRequestPrefix('foo'), // Will be active for all '/foo*' URL's
+            // 'active' => activeMenuUrlPrefix('foo'), // Will be active for all '/foo*' URL's
             'icon' => 'briefcase',
         ],
         [

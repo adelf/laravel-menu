@@ -22,7 +22,7 @@ return [
             'name' => 'Foo',
             'auth' => authMenuCan('fooAbility'),
             'link' => '/foo',
-            'active' => activeMenuRequestPrefix('foo'), // Will be active for all '/foo*' URL's
+            'active' => activeMenuUrlPrefix('foo'), // Will be active for all '/foo*' URL's
             'icon' => 'briefcase',
         ],
         [
@@ -31,7 +31,7 @@ return [
                 return Gate::check('one') || Gate::check('two');
             },
             'link' => '/complex-auth',
-            'active' => activeMenuRequestPrefix('complex-auth'),
+            'active' => activeMenuUrlPrefix('complex-auth'),
             'icon' => 'complex',
         ],
         [
