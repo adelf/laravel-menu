@@ -85,18 +85,31 @@ php artisan vendor:publish --provider="Adelf\LaravelMenu\LaravelMenuServiceProvi
 ```
 **resources/menu/default.php** and **resources/views/menu/menu.blade.php** files will appear.
 
+Laravel facade can be registered also in **config/app.php**(but is not required):
+```php
+'aliases' => [
+        ...,
+
+        'LaravelMenu' => Adelf\LaravelMenu\Facade::class,
+    ],
+```
+
 ## Using
 This will render menu's blade template
 ```blade
 <header>
     {!! app(\Adelf\LaravelMenu\LaravelMenu::class)->render() !!}
+    <!-- or, with facade: -->
+    {!! LaravelMenu::render() !!}
 </header>
 ```
 
 Title of active item can be used for title:
 ```blade
 <title>
-    {!! array_get(app(\Adelf\LaravelMenu\LaravelMenu::class)->getLastActiveItem(), 'name', '') !!}
+    {{array_get(app(\Adelf\LaravelMenu\LaravelMenu::class)->getLastActiveItem(), 'name', '')}}
+    <!-- or, with facade: -->
+    {{array_get(LaravelMenu::getLastActiveItem(), 'name', '')}}
 </title>
 ```
 
@@ -105,9 +118,9 @@ Another menu can be created by defining it in new file on **resources/menu** dir
 
 ```blade
 <title> 
-    {!! array_get(app(\Adelf\LaravelMenu\LaravelMenu::class)->getLastActiveItem('admin'), 'name', '') !!}
+    {!! array_get(LaravelMenu::getLastActiveItem('admin'), 'name', '') !!}
 </title>
 <header>
-    {!! app(\Adelf\LaravelMenu\LaravelMenu::class)->render('admin') !!}
+    {!! LaravelMenu::render('admin') !!}
 </header>
 ```
