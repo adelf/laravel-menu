@@ -26,7 +26,7 @@ return [
             'icon' => 'user',
         ],
         [
-            'name' => 'Complex auth',
+            'name' => trans('complex.auth'),
             'auth' => function (){
                 return Gate::check('one') || Gate::check('two');
             },
@@ -107,7 +107,7 @@ This will render menu's blade template
 Title of active item can be used for title:
 ```blade
 <title>
-    {{array_get(app(\Adelf\LaravelMenu\LaravelMenu::class)->getLastActiveItem(), 'name', '')}}
+    {{array_get(app(\Adelf\LaravelMenu\LaravelMenu::class)->getLastActiveItem(), 'name', 'Default title')}}
     <!-- or, with facade: -->
     {{array_get(LaravelMenu::getLastActiveItem(), 'name', '')}}
 </title>
@@ -118,7 +118,7 @@ Another menu can be created by defining it in new file on **resources/menu** dir
 
 ```blade
 <title> 
-    {!! array_get(LaravelMenu::getLastActiveItem('admin'), 'name', '') !!}
+    {!! array_get(LaravelMenu::getLastActiveItem('admin'), 'name', 'Default title') !!}
 </title>
 <header>
     {!! LaravelMenu::render('admin') !!}
