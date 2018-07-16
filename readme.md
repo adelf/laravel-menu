@@ -80,7 +80,7 @@ First, require package via composer:
 composer require adel/laravel-menu
 ```
 
-For Laravel < 5.5 check [Laravel < 5.5 installation](#Laravel-<-5.5-installation) section.
+For Laravel < 5.5 check [Laravel < 5.5 installation](#laravel--55-installation) section.
 
 When publish some initial configuration and blade template:
 ```
