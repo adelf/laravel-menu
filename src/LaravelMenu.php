@@ -71,7 +71,7 @@ final class LaravelMenu
             return $this->filterResults[$menuName];
         }
 
-        $menuConfig = include resource_path('menu/' . $menuName . '.php');
+        $menuConfig = include base_path('resources/menu/' . $menuName . '.php');
 
         $filter = $this->filterFactory->create(array_get($menuConfig, 'filter', 'two-level'));
 
