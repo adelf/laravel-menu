@@ -86,7 +86,7 @@ When publish some initial configuration and blade template:
 ```
 php artisan vendor:publish --provider="Adelf\LaravelMenu\LaravelMenuServiceProvider"
 ```
-**resources/menu/default.php** and **resources/views/menu/menu.blade.php** files will appear. It's just a templates. Provide your own configuration and blade template.
+**resources/menu/default.php** and **resources/views/menu/menu.blade.php** files will appear. It's just an examples. Provide your own configuration and blade template.
 
 ## Using
 This will render menu's blade template
