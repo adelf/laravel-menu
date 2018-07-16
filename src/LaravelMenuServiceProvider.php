@@ -17,9 +17,20 @@ final class LaravelMenuServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (function_exists('resource_path'))
+        {
+            $menuPath = resource_path('menu/default.php');
+            $templatePath = resource_path('views/menu/menu.blade.php');
+        }
+        else
+        {
+            $menuPath = base_path('resources/menu/default.php');
+            $templatePath = base_path('resources/views/menu/menu.blade.php');
+        }
+
         $this->publishes([
-            __DIR__ . '/../resources/menu/default.php' => resource_path('menu/default.php'),
-            __DIR__ . '/../resources/views/menu/menu.blade.php' => resource_path('views/menu/menu.blade.php'),
+            __DIR__ . '/../resources/menu/default.php' => $menuPath,
+            __DIR__ . '/../resources/views/menu/menu.blade.php' => $templatePath,
         ]);
     }
 
@@ -32,7 +43,7 @@ final class LaravelMenuServiceProvider extends ServiceProvider
     {
         $processor = $this->app->make('config')->get('laravel-menu.processor', ActiveMenuItemProcessor::class);
 
-        if($processor)
+        if ($processor)
         {
             $this->app->bind(LaravelMenuItemProcessor::class, $processor);
         }
@@ -42,6 +53,6 @@ final class LaravelMenuServiceProvider extends ServiceProvider
 
         LaravelMenuFilterFactory::addFilter('two-level', TwoLevelAuthFilter::class);
 
-        LaravelMenuRenderFactory::addRenderer('blade', BladeRender::class);
+        LaravelMenuRenderFactory::addRender('blade', BladeRender::class);
     }
 }

@@ -15,7 +15,7 @@ final class LaravelMenuRenderFactory
      * @param string $name
      * @param string | LaravelMenuRender $renderer class name or object - LaravelMenuRenderer instance
      */
-    public static function addRenderer(string $name, $renderer)
+    public static function addRender(string $name, $renderer)
     {
         self::$filters[$name] = $renderer;
     }
