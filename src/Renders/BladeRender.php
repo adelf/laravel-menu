@@ -13,6 +13,8 @@ final class BladeRender implements LaravelMenuRender
      */
     public function render(FilteredMenu $result): string
     {
-        return view(array_get($result->getMenuConfig(), 'template', 'menu.menu'), ['items' => $result->getFilteredItems()])->render();
+        return view(array_get($result->getMenuConfig(), 'template', 'menu.menu'), [
+            'items' => $result->getFilteredItems()
+        ])->render();
     }
 }

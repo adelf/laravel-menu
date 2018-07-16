@@ -77,29 +77,21 @@ For two-level menus it's more complicated. Example of it is provided by package.
 ## Installation
 First, require package via composer:
 ```
-composer require adelf/laravel-menu
+composer require adel/laravel-menu
 ```
+
+For Laravel < 5.5 check [Laravel < 5.5 installation](#Laravel-<-5.5-installation) section.
+
 When publish some initial configuration and blade template:
 ```
 php artisan vendor:publish --provider="Adelf\LaravelMenu\LaravelMenuServiceProvider"
 ```
-**resources/menu/default.php** and **resources/views/menu/menu.blade.php** files will appear.
-
-Laravel facade can be registered also in **config/app.php**(but is not required):
-```php
-'aliases' => [
-        ...,
-
-        'LaravelMenu' => Adelf\LaravelMenu\Facade::class,
-    ],
-```
+**resources/menu/default.php** and **resources/views/menu/menu.blade.php** files will appear. It's just a templates. Provide your own configuration and blade template.
 
 ## Using
 This will render menu's blade template
 ```blade
 <header>
-    {!! app(\Adelf\LaravelMenu\LaravelMenu::class)->render() !!}
-    <!-- or, with facade: -->
     {!! LaravelMenu::render() !!}
 </header>
 ```
@@ -107,9 +99,7 @@ This will render menu's blade template
 Title of active item can be used for title:
 ```blade
 <title>
-    {{array_get(app(\Adelf\LaravelMenu\LaravelMenu::class)->getLastActiveItem(), 'name', 'Default title')}}
-    <!-- or, with facade: -->
-    {{array_get(LaravelMenu::getLastActiveItem(), 'name', '')}}
+    {{array_get(LaravelMenu::getLastActiveItem(), 'name', 'Default title')}}
 </title>
 ```
 
@@ -123,4 +113,20 @@ Another menu can be created by defining it in new file on **resources/menu** dir
 <header>
     {!! LaravelMenu::render('admin') !!}
 </header>
+```
+
+## Laravel < 5.5 installation
+
+Service provider and facade should be registered in **config/app.php**:
+```php
+'providers' => [
+    ...
+    
+    Adelf\LaravelMenu\LaravelMenuServiceProvider::class,
+],
+'aliases' => [
+    ...,
+
+    'LaravelMenu' => Adelf\LaravelMenu\Facade::class,
+],
 ```

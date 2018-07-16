@@ -26,7 +26,9 @@ final class LaravelMenu
      */
     private $filterResults = [];
 
-    public function __construct(LaravelMenuFilterFactory $filterFactory, LaravelMenuRenderFactory $rendererFactory, ActiveMenuItemProcessor $activeMenuItemProcessor)
+    public function __construct(LaravelMenuFilterFactory $filterFactory,
+                                LaravelMenuRenderFactory $rendererFactory,
+                                ActiveMenuItemProcessor $activeMenuItemProcessor)
     {
         $this->filterFactory = $filterFactory;
         $this->renderFactory = $rendererFactory;

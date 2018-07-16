@@ -12,7 +12,7 @@ return [
             'icon' => 'home',
         ],
         [
-            'name' => 'Foo',
+            'name' => trans('menu.foo'),
             //'auth' => authMenuCan('fooAbility'),
             'link' => '/foo', // or route('foo')
             // 'active' => activeMenuUrlPrefix('foo'), // Will be active for all '/foo*' URL's
