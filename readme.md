@@ -58,13 +58,13 @@ return [
 
 Blade template for one-level menus can be very simple:
 ```blade
-<nav>
-    <ul>
+<!-- Example of menu template with Bootstrap and FontAwesome icons-->
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
         @foreach($items as $item)
             <li @if($item['active']) class="active" @endif>
                 <a href="{{$item['link']}}" title="{{$item['name']}}">
-                    <i class="fa fa-{{$item['icon']}}"></i>
-                    {{$item['name']}}
+                    <i class="fa fa-{{$item['icon']}}"></i> {{$item['name']}}
                 </a>
             </li>
         @endforeach
