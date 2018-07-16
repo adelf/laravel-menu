@@ -13,14 +13,14 @@ return [
     'items' => [
         [
             'name' => 'Home',
-            'auth' => authMenuCan('homeAbility'), // Will be shown if user "can" 'homeAbility'.
             'link' => route('dashboard'),
             'active' => activeMenuController(\App\Http\Controllers\DashboardController::class),
             'icon' => 'home',
         ],
         [
             'name' => 'Users',
-            'auth' => authMenuCan('manageUsers'),
+            'auth' => authMenuCan('manageUsers'), // Will be shown if user "can" 'manageUsers'.
+            // Gate::check('manageUsers') will be checked
             'link' => '/users',
             'active' => activeMenuUrlPrefix('users'), // Will be active for all '/users*' URL's
             'icon' => 'user',
