@@ -1,5 +1,8 @@
 # Laravel Menu
 
+[![Latest Version on Packagist][ico-version]][link-packagist]
+[![Software License][ico-license]](LICENSE.md)
+
 Simple component for creating menus in Laravel. Instead of using controllers or creating huge blade templates suggests only one configuration file.
 
 Example (**resources/menu/default.php**):
@@ -130,3 +133,8 @@ Service provider and facade should be registered in **config/app.php**:
     'LaravelMenu' => Adelf\LaravelMenu\Facade::class,
 ],
 ```
+
+[ico-version]: https://img.shields.io/packagist/v/adel/laravel-menu.svg?style=flat-square
+[ico-license]: https://img.shields.io/packagist/l/adel/laravel-menu.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/adel/laravel-menu
