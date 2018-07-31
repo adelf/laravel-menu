@@ -1,7 +1,7 @@
 # Laravel Menu
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
+[![Software License][ico-license]](LICENSE)
 
 Simple component for creating menus in Laravel. Instead of using controllers or creating huge blade templates suggests only one configuration file.
 
