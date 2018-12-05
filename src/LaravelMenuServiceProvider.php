@@ -17,7 +17,7 @@ final class LaravelMenuServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (function_exists('resource_path'))
+        if(function_exists('resource_path'))
         {
             $menuPath = resource_path('menu/default.php');
             $templatePath = resource_path('views/menu/menu.blade.php');
@@ -43,7 +43,7 @@ final class LaravelMenuServiceProvider extends ServiceProvider
     {
         $processor = $this->app->make('config')->get('laravel-menu.processor', ActiveMenuItemProcessor::class);
 
-        if ($processor)
+        if($processor)
         {
             $this->app->bind(LaravelMenuItemProcessor::class, $processor);
         }
