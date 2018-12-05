@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE)
+[![Scrutinizer][ico-scrutinizer]][link-scrutinizer]
 
 Simple component for creating menus in Laravel. Instead of using controllers or creating huge blade templates suggests only one configuration file.
 
@@ -136,5 +137,7 @@ Service provider and facade should be registered in **config/app.php**:
 
 [ico-version]: https://img.shields.io/packagist/v/adel/laravel-menu.svg?style=flat-square
 [ico-license]: https://img.shields.io/packagist/l/adel/laravel-menu.svg?style=flat-square
+[ico-scrutinizer]: https://scrutinizer-ci.com/g/adelf/laravel-menu/badges/quality-score.png?b=master
 
 [link-packagist]: https://packagist.org/packages/adel/laravel-menu
+[link-scrutinizer]: https://scrutinizer-ci.com/g/adelf/laravel-menu/
