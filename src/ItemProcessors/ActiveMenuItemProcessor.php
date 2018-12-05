@@ -11,7 +11,7 @@ final class ActiveMenuItemProcessor implements LaravelMenuItemProcessor
 
     public function process($item)
     {
-        if (array_key_exists('active', $item))
+        if(array_key_exists('active', $item))
         {
             $item['active'] = $item['active']();
 
