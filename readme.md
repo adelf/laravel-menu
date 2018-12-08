@@ -86,7 +86,7 @@ composer require adel/laravel-menu
 
 For Laravel < 5.5 check [Laravel < 5.5 installation](#laravel--55-installation) section.
 
-When publish some initial configuration and blade template:
+Then publish some initial configuration and blade template:
 ```
 php artisan vendor:publish --provider="Adelf\LaravelMenu\LaravelMenuServiceProvider"
 ```
